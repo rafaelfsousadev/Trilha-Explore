@@ -19,12 +19,14 @@ body{
 nav{
     padding: 64px;
     grid-area: timeline;
+    overflow-y: scroll;
 }
 .memory{
     display: flex;
     flex-direction: column;
     gap:16px;
     text-decoration: none;
+    margin-bottom: 64px;
 }
 .memory small{
     color: #bebebf;
@@ -45,6 +47,34 @@ nav{
     color: #bebebf;
     line-height: 28px;
 }
+
 aside{
     grid-area: profile;
+
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    border-right: solid 1px;
+    border-image: linear-gradient(#727275, #2c2c31) 1;
+    background-image: url(imagens/background.svg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+aside img:nth-child(2){
+    width: 160px;
+    border-radius: 50%;
+    border: solid 4px transparent;
+    background: linear-gradient(#d39e33,#ed5636,#633bbc)padding-box,linear-gradient(260deg,#d39e33,#ed5636,#633bbc)border-box;
+}
+aside p{
+    font-size: 32px;
+}
+span{
+    font-size: 18px;
+    color: #9e9ea0;
 }
