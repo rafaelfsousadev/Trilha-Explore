@@ -7,6 +7,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+:root {
+    font-size: 16px;
+}
 
 ::-webkit-scrollbar{
     width: 8px;
@@ -16,6 +19,18 @@
 }
 ::-webkit-scrollbar-thumb{
     background-color: #9e9ea0;
+}
+@keyframes entering{
+    from{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
 }
 body{
     background-color: #121215;
@@ -30,6 +45,7 @@ nav{
     padding: 64px;
     grid-area: timeline;
     overflow-y: scroll;
+    animation: entering 1s ease-in-out;
 }
 .memory{
     display: flex;
@@ -40,10 +56,10 @@ nav{
 }
 .memory small{
     color: #bebebf;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 .memory h1{
-    font-size: 32px;
+    font-size: 2rem;
     color: #eaeaea; 
 }
 .memory img{
@@ -60,7 +76,7 @@ nav{
 }
 
 .memory p{
-    font-size: 18px;
+    font-size: 1.2rem;
     color: #bebebf;
     line-height: 28px;
 }
@@ -88,6 +104,9 @@ aside{
     background-repeat: no-repeat;
     background-size: cover;
 }
+aside *{
+    animation: entering 1s ease-in-out;
+}
 aside img:nth-child(2){
     width: 160px;
     border-radius: 50%;
@@ -95,9 +114,30 @@ aside img:nth-child(2){
     background: linear-gradient(#d39e33,#ed5636,#633bbc)padding-box,linear-gradient(260deg,#d39e33,#ed5636,#633bbc)border-box;
 }
 aside p{
-    font-size: 32px;
+    font-size: 2rem;
 }
 span{
-    font-size: 18px;
+    font-size: 0.75rem;
     color: #9e9ea0;
+}
+
+@media (max-width: 768px) {
+    :root{
+        font-size: 14px;
+    }
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.8fr;
+        grid-template-areas: 
+        "profile"
+        "timeline";
+    }
+    aside{
+        border-right: none;
+        padding: 32px 12px;
+    }
+    nav{
+        overflow-y: visible;
+        padding: 22px;
+    }
 }
